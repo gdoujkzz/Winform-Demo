@@ -35,6 +35,9 @@
   <ItemGroup>
     <Reference Include="Awesomium.Core, Version=1.6.6.0, Culture=neutral, PublicKeyToken=e1a0d7c8071a5214" />
     <Reference Include="Awesomium.Windows.Forms, Version=1.6.6.0, Culture=neutral, PublicKeyToken=9bd24830fbe304a0, processorArchitecture=x86" />
+    <Reference Include="IrisSkin4">
+      <HintPath>..\..\..\ck1-wms-app\Libs\IrisSkin4.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,6 +54,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\MenuManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\MenuManager.Designer.cs">
+      <DependentUpon>MenuManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\UserManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\UserManager.Designer.cs">
+      <DependentUpon>UserManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NavFrm.Designer.cs">
+      <DependentUpon>NavFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outbound\DeliveryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outbound\DeliveryList.Designer.cs">
+      <DependentUpon>DeliveryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DaReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\DaReport.Designer.cs">
+      <DependentUpon>DaReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\MenuData.cs" />
     <Compile Include="Welcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,11 +92,11 @@
       <DependentUpon>Welcome.cs</DependentUpon>
     </Compile>
     <Compile Include="DockHelper.cs" />
-    <Compile Include="DummyDoc.cs">
+    <Compile Include="Inbound\PrintLabel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DummyDoc.Designer.cs">
-      <DependentUpon>DummyDoc.cs</DependentUpon>
+    <Compile Include="Inbound\PrintLabel.Designer.cs">
+      <DependentUpon>PrintLabel.cs</DependentUpon>
     </Compile>
     <Compile Include="MainFrm.cs">
       <SubType>Form</SubType>
@@ -72,11 +106,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Base\MenuManager.resx">
+      <DependentUpon>MenuManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\UserManager.resx">
+      <DependentUpon>UserManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavFrm.resx">
+      <DependentUpon>NavFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outbound\DeliveryList.resx">
+      <DependentUpon>DeliveryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\DaReport.resx">
+      <DependentUpon>DaReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DummyDoc.resx">
-      <DependentUpon>DummyDoc.cs</DependentUpon>
+    <EmbeddedResource Include="Inbound\PrintLabel.resx">
+      <DependentUpon>PrintLabel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrm.resx">
       <DependentUpon>MainFrm.cs</DependentUpon>
@@ -101,13 +150,236 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Skins\Calmness.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\CalmnessColor1.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\CalmnessColor2.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\DeepCyan.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\DeepGreen.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\DeepOrange.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\DiamondBlue.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\DiamondGreen.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\DiamondOlive.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\DiamondPurple.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\DiamondRed.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Eighteen.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\EighteenColor1.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\EighteenColor2.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Emerald.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\EmeraldColor1.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\EmeraldColor2.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\EmeraldColor3.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\GlassBrown.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\GlassGreen.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\GlassOrange.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Longhorn.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\MacOS.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Midsummer.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\MidsummerColor1.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\MidsummerColor2.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\MidsummerColor3.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\mp10.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\mp10green.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\mp10maroon.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\mp10mulberry.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\mp10pink.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\mp10purple.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\MSN.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\office2007.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\OneBlue.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\OneCyan.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\OneGreen.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\OneOrange.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Page.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\PageColor1.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\PageColor2.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\RealOne.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Silver.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SilverColor1.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SilverColor2.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SportsBlack.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SportsBlue.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SportsCyan.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SportsGreen.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SportsOrange.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SteelBlack.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SteelBlue.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\vista1.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\vista1_green.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Vista2_color1.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Vista2_color2.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Vista2_color3.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Vista2_color4.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Vista2_color5.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Vista2_color6.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Vista2_color7.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Warm.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\WarmColor1.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\WarmColor2.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\WarmColor3.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Wave.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\WaveColor1.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\WaveColor2.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\XPBlue.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\XPGreen.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\XPOrange.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\XPSilver.ssk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logo.ico" />
     <None Include="Resources\Welcome.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="menu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

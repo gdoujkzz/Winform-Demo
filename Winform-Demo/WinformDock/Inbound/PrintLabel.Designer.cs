@@ -1,6 +1,6 @@
 ﻿namespace WinformDock
 {
-    partial class DummyDoc
+    partial class PrintLabel
     {
         /// <summary>
         /// Required designer variable.
@@ -33,6 +33,7 @@
             this.CloseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CloseAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CloseAllButThisOneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.contextMenuTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,40 +44,49 @@
             this.CloseAllToolStripMenuItem,
             this.CloseAllButThisOneToolStripMenuItem});
             this.contextMenuTabPage.Name = "contextMenuTabPage";
-            this.contextMenuTabPage.Size = new System.Drawing.Size(202, 92);
+            this.contextMenuTabPage.Size = new System.Drawing.Size(202, 70);
             // 
             // CloseToolStripMenuItem
             // 
             this.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem";
             this.CloseToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.CloseToolStripMenuItem.Text = "Close";
-            this.CloseToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
             // 
             // CloseAllToolStripMenuItem
             // 
             this.CloseAllToolStripMenuItem.Name = "CloseAllToolStripMenuItem";
             this.CloseAllToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.CloseAllToolStripMenuItem.Text = "Close All";
-            this.CloseAllToolStripMenuItem.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
             // 
             // CloseAllButThisOneToolStripMenuItem
             // 
             this.CloseAllButThisOneToolStripMenuItem.Name = "CloseAllButThisOneToolStripMenuItem";
             this.CloseAllButThisOneToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.CloseAllButThisOneToolStripMenuItem.Text = "Close All But this One";
-            this.CloseAllButThisOneToolStripMenuItem.Click += new System.EventHandler(this.CloseAllButThisOneToolStripMenuItem_Click);
             // 
-            // DummyDoc
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(296, 215);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(208, 21);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "this is PrintLabel";
+            // 
+            // PrintLabel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "DummyDoc";
+            this.Controls.Add(this.label1);
+            this.Name = "PrintLabel";
             this.TabPageContextMenuStrip = this.contextMenuTabPage;
-            this.TabText = "DummyDoc";
-            this.Text = "DummyDoc";
+            this.TabText = "PrintLabel";
+            this.Text = "PrintLabel";
             this.contextMenuTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -86,5 +96,6 @@
         private System.Windows.Forms.ToolStripMenuItem CloseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CloseAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CloseAllButThisOneToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }
